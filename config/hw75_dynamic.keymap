@@ -61,7 +61,7 @@
 		};
 
 		scroll {
-			label = "快进";
+			label = "倍速";
 			icon = [EF 84 9E];
 			bindings = <&trans &trans>;
 			sensor-bindings = <&inc_dec_kp A D>;
