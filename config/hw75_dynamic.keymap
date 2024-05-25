@@ -56,7 +56,7 @@
 		scroll {
 			label = "滚动";
 			icon = [EF 86 8A];
-			bindings = <&lvkp LV_KEY_PREV &lvkp LV_KEY_NEXT>;
+			bindings = <&trans &trans>;
 			sensor-bindings = <&inc_dec_kp X Z>;
 		};
 
