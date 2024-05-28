@@ -32,6 +32,36 @@
 				   <&macro_release &kp LSHIFT>,
 				   <&macro_release &kp LALT>;
 		};
+
+		secret_forward: secret-forward {
+			label = "SECRET_FORWARD";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_press   &kp W>,
+				   <&macro_release   &kp W>,
+				   <&macro_press   &kp X>,
+				   <&macro_release   &kp X>,
+				   <&macro_press     &kp H>,
+				   <&macro_release   &kp H>,
+				   <&macro_press &kp N>,
+				   <&macro_release &kp N>;
+		};
+
+		secret_backward: secret-backward {
+			label = "SECRET_BACKWARD";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_press   &kp N>,
+				   <&macro_release   &kp N>,
+				   <&macro_press   &kp X>,
+				   <&macro_release   &kp X>,
+				   <&macro_press     &kp H>,
+				   <&macro_release   &kp H>,
+				   <&macro_press &kp W>,
+				   <&macro_release &kp W>,
+				   <&macro_press &kp M>,
+				   <&macro_release &kp M>;
+		};
 	};
 
 	behaviors {
@@ -40,6 +70,13 @@
 			label = "SWITCH_TASKS";
 			#sensor-binding-cells = <0>;
 			bindings = <&tasks_forward>, <&tasks_backward>;
+		};
+
+		secret_tasks: secret-tasks {
+			compatible = "zmk,behavior-sensor-rotate";
+			label = "SECRET_TASKS";
+			#sensor-binding-cells = <0>;
+			bindings = <&secret_forward>, <&secret_backward>;
 		};
 	};
 
@@ -81,6 +118,14 @@
 			sensor-bindings = <&switch_tasks>;
 			profile = <&profile_spring>;
 		};
-		
+
+		secret {
+			label = "秘密";
+			icon = [EF 85 9F];
+			bindings = <&trans &trans>;
+			sensor-bindings = <&secret_tasks>;
+			profile = <&profile_spring>;
+		};
+
 	};
 };
