@@ -76,7 +76,7 @@
 			compatible = "zmk,behavior-sensor-rotate";
 			label = "SECRET_TASKS";
 			#sensor-binding-cells = <0>;
-			bindings = <&secret_forward>, <&secret_backward>;
+			bindings = <&secret_backward>, <&secret_forward>;
 		};
 	};
 
